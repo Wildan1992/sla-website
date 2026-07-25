@@ -388,3 +388,35 @@ textarea{ resize:vertical; }
   .footer__links{ order:2; }
   .footer__copy{ order:3; }
 }
+
+.whatsapp-float{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:200;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.35);
+  transition:transform .2s ease;
+}
+.whatsapp-float:hover{ transform:scale(1.08); }
+@media (max-width:600px){
+  .whatsapp-float{ width:50px; height:50px; bottom:18px; right:18px; }
+}
+
+.whyus{ padding:100px 0; }
+.whyus__grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+  margin-top:50px; background:var(--line); border:1px solid var(--line);
+}
+.whyus__item{ background:var(--ink); padding:30px 26px; }
+.whyus__item h3{ font-family:var(--serif); font-size:19px; color:var(--gold-bright); margin:0 0 10px; }
+.whyus__item p{ font-size:14px; color:var(--parchment-dim); margin:0; }
+@media (max-width:900px){ .whyus__grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .whyus__grid{ grid-template-columns:1fr; } }
