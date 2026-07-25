@@ -234,15 +234,52 @@
     </div>
 
     <div class="contact__col">
-      <form class="quote-form" id="quoteForm">
-        <div class="field-row">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" required>
-          </label>
-          <label>
-            <span>Company</span>
-            <input type="text" name="company">
+      <form class="quote-form" id="quoteForm" name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="quote-request">
+  <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+  <div class="field-row">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      <span>Company</span>
+      <input type="text" name="company">
+    </label>
+  </div>
+  <div class="field-row">
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      <span>Phone</span>
+      <input type="tel" name="phone">
+    </label>
+  </div>
+  <div class="field-row">
+    <label>
+      <span>Mode</span>
+      <select name="mode">
+        <option>Sea Freight</option>
+        <option>Land Freight</option>
+        <option>Air Freight</option>
+        <option>Not sure yet</option>
+      </select>
+    </label>
+    <label>
+      <span>Route (origin → destination)</span>
+      <input type="text" name="route" placeholder="e.g. Erbil → Jebel Ali">
+    </label>
+  </div>
+  <label class="field-full">
+    <span>Shipment details</span>
+    <textarea name="details" rows="4" placeholder="Cargo type, weight/volume, timing…"></textarea>
+  </label>
+  <button type="submit" class="btn btn--gold btn--full">Get a Free Quote Now</button>
+  <p class="quote-form__note" id="formStatus">We'll get back to you shortly by phone or email.</p>
+</form>
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="wrap footer__inner">

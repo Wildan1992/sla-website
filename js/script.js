@@ -22,31 +22,28 @@ if (burger) {
   });
 }
 
-// Quote form -> builds a mailto: link with the shipment details filled in
+// Quote form -> submits to Netlify Forms via AJAX, shows inline confirmation
 const quoteForm = document.getElementById('quoteForm');
+const formStatus = document.getElementById('formStatus');
 if (quoteForm) {
   quoteForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(quoteForm);
-    const name = data.get('name') || '';
-    const company = data.get('company') || '';
-    const email = data.get('email') || '';
-    const phone = data.get('phone') || '';
-    const mode = data.get('mode') || '';
-    const route = data.get('route') || '';
-    const details = data.get('details') || '';
+    const encoded = new URLSearchParams(data).toString();
 
-    const subject = `Quote request — ${mode}${route ? ' — ' + route : ''}`;
-    const body =
-      `Name: ${name}\n` +
-      `Company: ${company}\n` +
-      `Email: ${email}\n` +
-      `Phone: ${phone}\n` +
-      `Mode: ${mode}\n` +
-      `Route: ${route}\n\n` +
-      `Details:\n${details}`;
-
-    const mailto = `mailto:ops@slalogi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encoded
+    })
+      .then(() => {
+        formStatus.textContent = "Thanks — your request has been sent. We'll be in touch shortly.";
+        formStatus.style.color = '#7CD68B';
+        quoteForm.reset();
+      })
+      .catch(() => {
+        formStatus.textContent = "Something went wrong — please call or WhatsApp us directly at +964 773 777 6644.";
+        formStatus.style.color = '#E07856';
+      });
   });
 }

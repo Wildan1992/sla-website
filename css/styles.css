@@ -420,3 +420,5 @@ textarea{ resize:vertical; }
 .whyus__item p{ font-size:14px; color:var(--parchment-dim); margin:0; }
 @media (max-width:900px){ .whyus__grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:600px){ .whyus__grid{ grid-template-columns:1fr; } }
+
+.visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
