@@ -73,8 +73,10 @@
     <h2 class="section-title">Three modes. One desk.</h2>
 
     <div class="cards">
-      <article class="card">
-        <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true">
+           <article class="card">
+           <div class="card__photo" style="background-image:url('assets/photos/sea-freight.jpg')"></div>
+           <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true">
+            <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true">
           <path d="M8 40c6-6 12-6 18 0s12 6 18 0s12-6 18 0" class="ico-wave"/>
           <path d="M6 48c6-6 12-6 18 0s12 6 18 0s12-6 18 0" class="ico-wave"/>
           <path d="M20 40 L20 20 L38 20 L44 30 L44 40" class="ico-line"/>
@@ -89,6 +91,8 @@
       </article>
 
       <article class="card">
+  <div class="card__photo" style="background-image:url('assets/photos/land-freight.jpg')"></div>
+  <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true">
         <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true">
           <path d="M6 26 H58 M6 38 H58" class="ico-line"/>
           <rect x="10" y="28" width="6" height="8" class="ico-fill"/>
@@ -106,6 +110,8 @@
       </article>
 
       <article class="card">
+  <div class="card__photo" style="background-image:url('assets/photos/air-freight.jpg')"></div>
+  <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true">
         <svg class="card__icon" viewBox="0 0 64 64" aria-hidden="true">
           <path d="M32 6 C36 4, 40 8, 39 14 C38 20, 30 20, 29 15 C28 9, 34 3, 44 8 C46 26, 40 34, 34 40" class="ico-line"/>
           <path d="M38 18 C41 16, 45 18, 44 21 C43 24, 38 23, 37 21" class="ico-line-thin"/>
@@ -136,8 +142,8 @@
         <span class="badge">Single point of contact</span>
       </div>
     </div>
-    <div class="network__diagram" aria-hidden="true">
-      <svg viewBox="0 0 480 420" class="route-map">
+<div class="network__diagram" aria-hidden="true" style="position:relative; border-radius:4px; overflow:hidden; background:url('assets/photos/warehouse.jpg') center/cover no-repeat;">
+  <div style="position:absolute; inset:0; background:rgba(14,27,34,0.72);"></div>      <svg viewBox="0 0 480 420" class="route-map">
         <path d="M 240 210 C 190 170, 150 150, 90 130" class="route route--air"/>
         <path d="M 240 210 C 280 250, 320 260, 400 280" class="route route--sea"/>
         <path d="M 240 210 L 240 90" class="route route--land"/>
@@ -153,6 +159,7 @@
         <circle cx="240" cy="90" r="6" class="node"/>
         <text x="200" y="72" class="node-label">REGIONAL ROAD ROUTES</text>
       </svg>
+      </div>
     </div>
   </div>
 </section>
